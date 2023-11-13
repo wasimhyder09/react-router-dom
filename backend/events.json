@@ -1,11 +1,1 @@
-{
-  "events": [
-    {
-      "id": "e1",
-      "title": "A dummy event",
-      "date": "2023-02-22",
-      "image": "https://blog.hubspot.de/hubfs/Germany/Blog_images/Optimize_Marketing%20Events%20DACH%202021.jpg",
-      "description": "Join this amazing event and connect with fellow developers."
-    }
-  ]
-}
+{"events":[{"title":"Another concert","image":"https://spotme.com/wp-content/uploads/2020/07/Hero-1.jpg","date":"2023-11-25","description":"Plase come to this.","id":"1a618098-886e-4ae8-a38a-a92d9e70666e"},{"title":"A new event","image":"https://www.oyorooms.com/blog/wp-content/uploads/2018/02/event.jpg","date":"2023-11-23","description":"Des","id":"1d5584c6-5968-41a6-8066-851abb790e05"},{"id":"e1","title":"A dummy event","date":"2023-02-22","image":"https://blog.hubspot.de/hubfs/Germany/Blog_images/Optimize_Marketing%20Events%20DACH%202021.jpg","description":"Join this amazing event and connect with fellow developers."}]}
