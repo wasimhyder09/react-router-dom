@@ -1,20 +1,18 @@
-// Challenge / Exercise
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
-// BONUS: Add another (nested) layout route that adds the <EventNavigation> component above all /events... page components
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import HomePage from './pages/Home';
-import EventsPage, { loader as eventsLoader } from './pages/Events';
-import EventDetailPage,
-{
-  loader as eventDetailLoader,
-  action as eventDeleteAction
-} from './pages/EventDetail';
-import NewEventPage from './pages/NewEvent';
 import EditEventPage from './pages/EditEvent';
-import RootLayout from './pages/Root';
-import EventsRootLayout from './pages/EventsRoot';
 import ErrorPage from './pages/Error';
+import EventDetailPage, {
+  loader as eventDetailLoader,
+  action as deleteEventAction,
+} from './pages/EventDetail';
+import EventsPage, { loader as eventsLoader } from './pages/Events';
+import EventsRootLayout from './pages/EventsRoot';
+import HomePage from './pages/Home';
+import NewEventPage from './pages/NewEvent';
+import RootLayout from './pages/Root';
 import { action as manipulateEventAction } from './components/EventForm';
+import NewsletterPage, { action as newsletterAction } from './pages/Newsletter';
 
 const router = createBrowserRouter([
   {
@@ -30,7 +28,7 @@ const router = createBrowserRouter([
           {
             index: true,
             element: <EventsPage />,
-            loader: eventsLoader
+            loader: eventsLoader,
           },
           {
             path: ':eventId',
@@ -40,25 +38,31 @@ const router = createBrowserRouter([
               {
                 index: true,
                 element: <EventDetailPage />,
-                action: eventDeleteAction
+                action: deleteEventAction,
               },
               {
                 path: 'edit',
                 element: <EditEventPage />,
-                action: manipulateEventAction
-              }
-            ]
+                action: manipulateEventAction,
+              },
+            ],
           },
           {
             path: 'new',
             element: <NewEventPage />,
-            action: manipulateEventAction
+            action: manipulateEventAction,
           },
-        ]
+        ],
       },
-    ]
-  }
+      {
+        path: 'newsletter',
+        element: <NewsletterPage />,
+        action: newsletterAction,
+      },
+    ],
+  },
 ]);
+
 function App() {
   return <RouterProvider router={router} />;
 }
